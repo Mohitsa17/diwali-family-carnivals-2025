@@ -26,7 +26,7 @@ const teamMembers = [
   {
     name: 'Mohitsa',
     role: 'Web Solutions Engineer',
-    image: '/Mohit.png',
+    image: '/mohit.png',
     description: 'Builds and manages everything related to technology — from creating this website from scratch to handling all things digital and internet as a Software Engineer.'
   }
 ]
