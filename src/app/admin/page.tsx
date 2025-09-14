@@ -13,6 +13,7 @@ interface Registration {
   email?: string
   contest: Contest
   message?: string
+  numberOfChildren?: number
   photoUrl?: string
   videoUrl?: string
   createdAt: string
@@ -152,6 +153,7 @@ export default function AdminDashboard() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                 placeholder="Enter admin password"
                 required
+                suppressHydrationWarning
               />
             </div>
 
