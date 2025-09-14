@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Star, Crown, Award, Mail, Phone } from 'lucide-react'
+import Image from 'next/image'
 
 const sponsorTiers = [
   {
@@ -153,9 +154,11 @@ export default function SponsorsPage() {
                     >
                       <div className="flex items-center mb-4">
                         <div className="w-16 h-16 bg-white rounded-lg shadow-sm mr-4 flex items-center justify-center overflow-hidden">
-                          <img
+                          <Image
                             src={sponsor.logo}
                             alt={sponsor.name}
+                            width={64}
+                            height={64}
                             className="w-full h-full object-cover"
                           />
                         </div>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Download, Search, Eye, Lock, Users, Calendar, Phone, Mail, ExternalLink } from 'lucide-react'
 import { Contest } from '@/lib/types'
+import Image from 'next/image'
 
 interface Registration {
   id: string
@@ -408,7 +409,13 @@ export default function AdminDashboard() {
                   <div className="space-y-1">
                     <span className="font-semibold">Photo:</span> <a className="text-orange-600 underline" href={viewItem.photoUrl} target="_blank" rel="noreferrer">Open</a>
                     <div className="mt-2">
-                      <img src={viewItem.photoUrl} alt="Uploaded" className="rounded-md max-h-48 border" />
+                      <Image 
+                        src={viewItem.photoUrl} 
+                        alt="Uploaded" 
+                        width={300}
+                        height={200}
+                        className="rounded-md max-h-48 border object-cover" 
+                      />
                     </div>
                   </div>
                 )}
