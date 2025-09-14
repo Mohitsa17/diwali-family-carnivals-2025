@@ -252,30 +252,6 @@ export default function AboutPage() {
                 <p>Indore, Madhya Pradesh</p>
               </div>
             </div>
-
-            <div className="flex justify-center space-x-6">
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                href="#"
-                className="text-white hover:text-orange-200 transition-colors"
-              >
-                <Facebook className="h-8 w-8" />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                href="#"
-                className="text-white hover:text-orange-200 transition-colors"
-              >
-                <Instagram className="h-8 w-8" />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                href="#"
-                className="text-white hover:text-orange-200 transition-colors"
-              >
-                <Twitter className="h-8 w-8" />
-              </motion.a>
-            </div>
           </motion.div>
         </div>
       </section>

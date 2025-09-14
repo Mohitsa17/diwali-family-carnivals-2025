@@ -28,10 +28,20 @@ export function RegistrationModal() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: (name === 'age' || name === 'numberOfChildren') ? (value ? parseInt(value) : undefined) : value
-    }))
+    
+    // Special handling for name field - only allow letters and spaces
+    if (name === 'name') {
+      const filteredValue = value.replace(/[^a-zA-Z\s]/g, '')
+      setFormData(prev => ({
+        ...prev,
+        [name]: filteredValue
+      }))
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: (name === 'age' || name === 'numberOfChildren') ? (value ? parseInt(value) : undefined) : value
+      }))
+    }
     
     // Clear error when user starts typing
     if (errors[name]) {
@@ -89,6 +99,12 @@ export function RegistrationModal() {
 
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required'
+    } else if (!/^[a-zA-Z\s]+$/.test(formData.name.trim())) {
+      newErrors.name = 'Name can only contain letters and spaces'
+    }
+
+    if (!formData.age || formData.age < 1 || formData.age > 120) {
+      newErrors.age = 'Please enter a valid age (1-120)'
     }
 
     if (!formData.whatsapp.trim()) {
@@ -99,6 +115,13 @@ export function RegistrationModal() {
 
     if (formData.email && formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address (e.g., user@gmail.com)'
+    }
+
+    // Contest-specific validations
+    if (formData.contest === Contest.SUPERMOM) {
+      if (!formData.numberOfChildren || formData.numberOfChildren < 1 || formData.numberOfChildren > 20) {
+        newErrors.numberOfChildren = 'Please enter the number of children (1-20)'
+      }
     }
 
     // Message is now optional for all contests
@@ -248,7 +271,7 @@ export function RegistrationModal() {
 
                 <div>
                   <label htmlFor="age" className="block text-sm font-medium text-gray-700 mb-1">
-                    Age
+                    Age *
                   </label>
                   <input
                     type="number"
@@ -256,11 +279,15 @@ export function RegistrationModal() {
                     name="age"
                     value={formData.age || ''}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 ${
+                      errors.age ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Enter your age"
                     min="1"
                     max="120"
+                    required
                   />
+                  {errors.age && <p className="text-red-500 text-sm mt-1">{errors.age}</p>}
                 </div>
               </div>
 
@@ -309,7 +336,7 @@ export function RegistrationModal() {
                   {formData.contest === Contest.SUPERMOM && (
                     <div>
                       <label htmlFor="numberOfChildren" className="block text-sm font-medium text-gray-700 mb-1">
-                        Number of Children
+                        Number of Children *
                       </label>
                       <input
                         type="number"
@@ -317,11 +344,15 @@ export function RegistrationModal() {
                         name="numberOfChildren"
                         value={formData.numberOfChildren || ''}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                        className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 ${
+                          errors.numberOfChildren ? 'border-red-500' : 'border-gray-300'
+                        }`}
                         placeholder="Enter number of children"
                         min="1"
                         max="20"
+                        required
                       />
+                      {errors.numberOfChildren && <p className="text-red-500 text-sm mt-1">{errors.numberOfChildren}</p>}
                     </div>
                   )}
 
