@@ -54,24 +54,6 @@ const values = [
   }
 ]
 
-// const milestones = [
-  {
-    year: '2023',
-    title: 'First Diwali Carnival',
-    description: 'Launched our first community Diwali celebration with 400+ attendees'
-  },
-  {
-    year: '2024',
-    title: 'Expanded Reach',
-    description: 'Grew to 500+ attendees and introduced multiple contest categories'
-  },
-  {
-    year: '2025',
-    title: 'Biggest Event Yet',
-    description: 'Planning our largest celebration with enhanced activities and partnerships'
-  }
-]
-
 export default function AboutPage() {
   return (
     <div className="pt-16 min-h-screen bg-gray-50">
