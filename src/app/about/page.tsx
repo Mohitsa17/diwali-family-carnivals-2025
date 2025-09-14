@@ -24,10 +24,10 @@ const teamMembers = [
     description: 'Expert in traditional Indian culture and festival celebrations'
   },
   {
-    name: 'Anjali Singh',
-    role: 'Volunteer Coordinator',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop',
-    description: 'Manages our amazing team of volunteers who make everything possible'
+    name: 'Mohitsa',
+    role: 'Web Solutions Engineer',
+    image: '/Mohit.png',
+    description: 'Builds and manages everything related to technology — from creating this website from scratch to handling all things digital and internet as a Software Engineer.'
   }
 ]
 
