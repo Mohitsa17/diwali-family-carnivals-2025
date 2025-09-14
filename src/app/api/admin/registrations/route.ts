@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
     const exportFormat = searchParams.get('export')
 
     // Build where clause
-    const where: Record<string, any> = {}
+    const where: Record<string, unknown> = {}
     
     if (contest && contest !== 'ALL') {
       where.contest = contest
