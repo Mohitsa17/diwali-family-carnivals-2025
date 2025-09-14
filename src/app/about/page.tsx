@@ -54,7 +54,7 @@ const values = [
   }
 ]
 
-const milestones = [
+// const milestones = [
   {
     year: '2023',
     title: 'First Diwali Carnival',
@@ -249,7 +249,7 @@ export default function AboutPage() {
               Get in Touch
             </h2>
             <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
-              Have questions or want to get involved? We'd love to hear from you!
+              Have questions or want to get involved? We&apos;d love to hear from you!
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">

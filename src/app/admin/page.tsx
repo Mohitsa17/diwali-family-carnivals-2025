@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Download, Search, Filter, Eye, Lock, Users, Calendar, Phone, Mail, ExternalLink } from 'lucide-react'
+import { Download, Search, Eye, Lock, Users, Calendar, Phone, Mail, ExternalLink } from 'lucide-react'
 import { Contest } from '@/lib/types'
 
 interface Registration {
@@ -56,7 +56,7 @@ export default function AdminDashboard() {
       } else {
         setError('Invalid password')
       }
-    } catch (err) {
+    } catch {
       setError('Authentication failed')
     } finally {
       setLoading(false)
@@ -99,7 +99,7 @@ export default function AdminDashboard() {
         window.URL.revokeObjectURL(url)
         document.body.removeChild(a)
       }
-    } catch (err) {
+    } catch {
       setError('Failed to export CSV')
     }
   }

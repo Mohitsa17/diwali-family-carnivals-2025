@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Sparkles, Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react'
+import { Sparkles, Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react'
 
 export function Footer() {
   return (

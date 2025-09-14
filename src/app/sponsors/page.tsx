@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Star, Heart, Crown, Award, Mail, Phone } from 'lucide-react'
+import { Star, Crown, Award, Mail, Phone } from 'lucide-react'
 
 const sponsorTiers = [
   {
@@ -145,7 +145,7 @@ export default function SponsorsPage() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {tier.sponsors.map((sponsor, sponsorIndex) => (
+                  {tier.sponsors.map((sponsor) => (
                     <motion.div
                       key={sponsor.name}
                       whileHover={{ y: -5 }}

@@ -76,7 +76,7 @@ export function RegistrationModal() {
         ...prev,
         [type === 'photo' ? 'photoUrl' : 'videoUrl']: mockUrl
       }))
-    } catch (error) {
+    } catch {
       setErrors(prev => ({ 
         ...prev, 
         [type]: 'Failed to upload file. Please try again.' 
@@ -145,7 +145,7 @@ export function RegistrationModal() {
       } else {
         setSubmitStatus('error')
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -416,7 +416,7 @@ export function RegistrationModal() {
                   className="flex items-center space-x-2 p-4 bg-green-50 border border-green-200 rounded-lg"
                 >
                   <CheckCircle className="h-5 w-5 text-green-600" />
-                  <p className="text-green-800">Registration successful! We'll contact you soon.</p>
+                  <p className="text-green-800">Registration successful! We&apos;ll contact you soon.</p>
                 </motion.div>
               )}
 

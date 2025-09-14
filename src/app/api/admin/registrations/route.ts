@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
     const exportFormat = searchParams.get('export')
 
     // Build where clause
-    const where: any = {}
+    const where: Record<string, any> = {}
     
     if (contest && contest !== 'ALL') {
       where.contest = contest
@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
         videoUrl: true,
         createdAt: true,
         ipAddress: true
-      } as any
+      }
     })
 
     // Handle CSV export
@@ -70,7 +70,7 @@ export async function GET(request: NextRequest) {
         'IP Address'
       ]
 
-      const csvRows = registrations.map((reg: any) => [
+      const csvRows = registrations.map((reg) => [
         reg.id,
         reg.name,
         reg.age || '',

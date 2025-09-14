@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
-import { RegistrationData, Contest } from '@/lib/types'
+import { RegistrationData } from '@/lib/types'
 
 // Rate limiting (simple in-memory store - in production, use Redis)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>()
@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
         photoUrl: body.photoUrl,
         videoUrl: body.videoUrl,
         ipAddress: ip
-      } as any
+      }
     })
 
     // Send to Google Sheets webhook

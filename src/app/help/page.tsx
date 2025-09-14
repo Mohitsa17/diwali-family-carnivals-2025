@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     question: 'How can I register for the event?',
-    answer: 'You can register by clicking the "Register Now" button on our website. Fill out the registration form with your details and select any contests you\'d like to participate in. Registration is free for general attendance.'
+    answer: 'You can register by clicking the "Register Now" button on our website. Fill out the registration form with your details and select any contests you&apos;d like to participate in. Registration is free for general attendance.'
   },
   {
     question: 'What contests are available?',
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: 'What should I bring to the event?',
-    answer: 'Bring your family, enthusiasm, and any materials required for the contests you\'re participating in. We recommend bringing water bottles, comfortable clothing, and cameras to capture the memories!'
+    answer: 'Bring your family, enthusiasm, and any materials required for the contests you&apos;re participating in. We recommend bringing water bottles, comfortable clothing, and cameras to capture the memories!'
   },
   {
     question: 'Are there food and drinks available?',
@@ -70,7 +70,7 @@ const contactInfo = [
     icon: Clock,
     title: 'Office Hours',
     details: 'Mon-Fri: 9 AM - 6 PM',
-    description: 'We\'re here to help during business hours'
+    description: 'We&apos;re here to help during business hours'
   }
 ]
 
@@ -225,7 +225,7 @@ export default function HelpPage() {
               Still Have Questions?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Send us a message and we'll get back to you as soon as possible
+              Send us a message and we&apos;ll get back to you as soon as possible
             </p>
           </motion.div>
 
@@ -331,7 +331,7 @@ export default function HelpPage() {
               Quick Links
             </h2>
             <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
-              Find what you're looking for quickly
+              Find what you&apos;re looking for quickly
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <a

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Calendar, MapPin, Users } from 'lucide-react'
+import { X } from 'lucide-react'
 
 const galleryImages = [
   '/1g.jpg',
